@@ -1,1 +1,13 @@
-bmFtZTogQ0kKb246CiAgcHVsbF9yZXF1ZXN0OgogICAgYnJhbmNoZXM6IFsgbWFpbiBdCgpqb2JzOgogIGJ1aWxkOgogICAgcnVucy1vbjogdWJ1bnR1LWxhdGVzdAogICAgc3RlcHM6CiAgICAgIC0gdXNlczogYWN0aW9ucy9jaGVja291dEB2MwoKICAgICAgLSBuYW1lOiBQcmludCBicmFuY2ggbmFtZQogICAgICAgIHJ1bjogZWNobyAiQnJhbmNoIGlzICR7eyBnaXRodWIuaGVhZF9yZWYgfX0iCg==
+name: CI
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Print branch name
+        run: echo "Branch is ${{ github.head_ref }}"
